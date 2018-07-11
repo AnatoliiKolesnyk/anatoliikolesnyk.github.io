@@ -541,10 +541,8 @@ cameron *at* udacity *dot* com
     }
   }
 
-  // runs updatePositions on scroll
-  window.addEventListener('scroll', updatePositions);
-
-
+  
+  
   var cols = 8;
   var s = 256;
   var images = [];
@@ -564,4 +562,6 @@ cameron *at* udacity *dot* com
       document.querySelector("#movingPizzas1").appendChild(elem);
     }
     updatePositions();
+    // runs updatePositions on scroll
+    window.addEventListener('scroll', updatePositions);
   }, 0);
