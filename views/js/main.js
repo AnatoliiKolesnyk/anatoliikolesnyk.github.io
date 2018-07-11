@@ -547,6 +547,7 @@ cameron *at* udacity *dot* com
 
   var cols = 8;
   var s = 256;
+  var images = [];
   for (var i = 0; i < 200; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
@@ -555,6 +556,12 @@ cameron *at* udacity *dot* com
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    images.push(elem);
+    
   }
-  updatePositions();
+  setTimeout(() => {
+    for (const elem of images) {
+      document.querySelector("#movingPizzas1").appendChild(elem);
+    }
+    updatePositions();
+  }, 0);
