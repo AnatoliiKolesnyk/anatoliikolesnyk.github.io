@@ -17,7 +17,6 @@ cameron *at* udacity *dot* com
 */
 
 // Generates the sliding pizzas when the page loads.
-document.addEventListener('DOMContentLoaded', function () {
   // As you may have realized, this website randomly generates pizzas.
   // Here are arrays of all possible pizza ingredients.
   var pizzaIngredients = {};
@@ -559,4 +558,3 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
   updatePositions();
-});
