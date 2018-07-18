@@ -529,10 +529,10 @@ function updatePositions() {
   // Super easy to create custom metrics.
   window.performance.mark("mark_end_frame");
   window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
-  // if (frame % 10 === 0) {
-  //   var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
-  //   logAverageFrame(timesToUpdatePosition);
-  // }
+  if (frame % 10 === 0) {
+    var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
+    logAverageFrame(timesToUpdatePosition);
+  }
 }
 
 
@@ -554,10 +554,12 @@ for (var i = 0; i < 200; i++) {
 
 setTimeout(() => {
   // This for-loop actually creates and appends all of the pizzas when the page loads
+  var pizzasDiv = document.getElementById("randomPizzas");
+  var domFragment = document.createDocumentFragment();
   for (var i = 2; i < 100; i++) {
-    var pizzasDiv = document.getElementById("randomPizzas");
-    pizzasDiv.appendChild(pizzaElementGenerator(i));
+    domFragment.appendChild(pizzaElementGenerator(i));
   }
+  pizzasDiv.appendChild(domFragment);
 }, 0);
 
 setTimeout(() => {
